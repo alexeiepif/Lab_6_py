@@ -3,6 +3,9 @@
 
 # Дано предложение. Вывести все буквы м и н в нем.
 
+import sys
+
+
 if __name__ == '__main__':
     sentence = input("Введите предложение на русском языке: ")
 
@@ -13,4 +16,8 @@ if __name__ == '__main__':
                 or letter == 'н' or letter == 'Н'):
             letters_m_n.append(letter)
 
+    if not letters_m_n:
+        print("Букв 'м' и 'н' нет в данном предложении", file=sys.stderr)
+        exit(1)
+        
     print("Буквы 'м' и 'н' в предложении:", ', '.join(letters_m_n))
