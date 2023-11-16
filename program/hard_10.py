@@ -7,8 +7,11 @@
 # повторяющиеся буквы каждого слова не рассматриваются.
 
 def find_unique_letters_with_repeats(words):
-    unique_letters = set(''.join(words))  # Получаем уникальные буквы всех слов
-
+    letters = list(''.join(words))
+    unique_letters = []
+    for letter in letters:
+        if letter not in unique_letters:
+            unique_letters.append(letter)
     result = []
     for letter in unique_letters:
         count = 0
@@ -22,8 +25,11 @@ def find_unique_letters_with_repeats(words):
 
 
 def find_unique_letters_without_repeats(words):
-    unique_letters = set(''.join(words))  # Получаем уникальные буквы всех слов
-
+    letters = list(''.join(words))
+    unique_letters = []
+    for letter in letters:
+        if letter not in unique_letters:
+            unique_letters.append(letter)
     result = []
     for letter in unique_letters:
         count = 0
